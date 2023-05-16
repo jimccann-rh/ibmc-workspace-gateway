@@ -9,3 +9,4 @@ variable "public_vlan" {}
 variable "private_vlan" {}
 variable "domain_name" {}
 variable "tags" {}
+variable "ssh_key_ids" {}

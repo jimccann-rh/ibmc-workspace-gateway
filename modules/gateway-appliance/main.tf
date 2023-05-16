@@ -19,6 +19,7 @@ resource "ibm_network_gateway" "gateway" {
     private_vlan_id      = var.private_vlan
     tags                 = var.tags
     ipv6_enabled         = true
+    ssh_key_ids              = var.ssh_key_ids
     redundant_power_supply = true
     disk_key_names       = ["HARD_DRIVE_2_00_TB_SATA_2", "HARD_DRIVE_2_00_TB_SATA_2"]
       storage_groups {
@@ -45,6 +46,7 @@ resource "ibm_network_gateway" "gateway" {
     private_vlan_id      = var.private_vlan
     tags                 = var.tags
     ipv6_enabled         = true
+    ssh_key_ids              = var.ssh_key_ids
     redundant_power_supply = true
     disk_key_names       = ["HARD_DRIVE_2_00_TB_SATA_2", "HARD_DRIVE_2_00_TB_SATA_2"]
       storage_groups {
