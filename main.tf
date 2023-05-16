@@ -10,6 +10,28 @@ locals {
   ]
 }
 
+
+resource "tls_private_key" "ssh" {
+  algorithm = "RSA"
+  rsa_bits  = 4096
+}
+
+resource "null_resource" "create_private_key" {
+  provisioner "local-exec" {
+    command = <<-EOT
+      echo '${tls_private_key.ssh.private_key_pem}' > ./'${var.project}'.pem
+      chmod 400 ./'${var.project}'.pem
+    EOT
+  }
+}
+
+resource "ibm_compute_ssh_key" "project" {
+  label      = "${var.project}-sshkey-gateway"
+  public_key = tls_private_key.ssh.public_key_openssh
+  tags       = local.tags
+}
+
+
 #module "ticket" {
 #  depends_on      = [module.virtual-machines]
 #  source          = "./modules/ticket"
