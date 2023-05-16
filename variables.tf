@@ -27,13 +27,13 @@ variable "domain_name" {
 }
 
 variable "gateway_private_vlan" {
-  description = "Private VLAN of VSI systems"
+  description = "Private VLAN of systems"
   type        = string
   default     = ""
 }
 
 variable "gateway_public_vlan" {
-  description = "Public VLAN of VSI systems"
+  description = "Public VLAN of systems"
   type        = string
   default     = ""
 }
