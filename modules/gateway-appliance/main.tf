@@ -20,7 +20,7 @@ resource "ibm_network_gateway" "gateway" {
     tags                 = var.tags
     ipv6_enabled         = true
     ssh_key_ids              = var.ssh_key_ids
-    redundant_power_supply = true
+    redundant_power_supply = false
     disk_key_names       = ["HARD_DRIVE_2_00_TB_SATA_2", "HARD_DRIVE_2_00_TB_SATA_2"]
       storage_groups {
         array_type_id = 2
@@ -47,7 +47,7 @@ resource "ibm_network_gateway" "gateway" {
     tags                 = var.tags
     ipv6_enabled         = true
     ssh_key_ids              = var.ssh_key_ids
-    redundant_power_supply = true
+    redundant_power_supply = false
     disk_key_names       = ["HARD_DRIVE_2_00_TB_SATA_2", "HARD_DRIVE_2_00_TB_SATA_2"]
       storage_groups {
         array_type_id = 2
