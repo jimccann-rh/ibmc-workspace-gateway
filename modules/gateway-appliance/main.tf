@@ -27,7 +27,12 @@ resource "ibm_network_gateway" "gateway" {
         hard_drives = [0, 1]
         array_size  = 2000
     }
+    lifecycle {
+          ignore_changes = [
+        redundant_power_supply,  
+          ]
   }
+}
   members {
     hostname             = "${var.gateway_name}-2"
     domain               = var.domain_name
@@ -54,5 +59,10 @@ resource "ibm_network_gateway" "gateway" {
         hard_drives = [0, 1]
         array_size  = 2000
     }
+    lifecycle {
+          ignore_changes = [
+        redundant_power_supply,
+          ]
+    }  
   }
 }
