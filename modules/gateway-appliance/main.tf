@@ -2,9 +2,9 @@ resource "ibm_network_gateway" "gateway" {
   name = var.gateway_name
 
   lifecycle {
-     ignore_changes = [
-     redundant_power_supply,
-     ]
+    ignore_changes = [
+      "redundant_power_supply",
+    ]
   }
 
   members {
